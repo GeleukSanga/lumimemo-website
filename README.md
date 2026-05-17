@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jogpro 3D Website
 
-## Getting Started
+Website 3D printing profesional dengan animasi 3D interaktif dan admin panel untuk manage konten.
 
-First, run the development server:
+## 🚀 Features
+
+- ✨ **3D Interactive Hero** - Model 3D printer yang bisa di-rotate dengan mouse
+- 🎨 **Particle Effects** - Animasi particles dengan warna brand (hitam-oranye)
+- 📱 **Fully Responsive** - Optimized untuk desktop, tablet, dan mobile
+- ⚡ **Fast Performance** - Built with Next.js 15 + Turbopack
+- 🎯 **Smooth Animations** - GSAP & Framer Motion untuk transisi smooth
+- 🛠️ **Admin Panel** - Edit konten tanpa coding (localStorage based)
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **3D Rendering:** Three.js + React Three Fiber
+- **Animations:** Framer Motion + GSAP
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Admin Panel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Akses admin panel di: `http://localhost:3000/admin`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Features:**
+- Edit Hero section (title, subtitle, CTA)
+- Manage Services (icon, title, description)
+- Update Contact info (WhatsApp, email, location)
+- Manage Portfolio items (title, category, image URL)
+- Export/Import content sebagai JSON
+- Auto-save ke localStorage
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+jogpro-3d-website/
+├── app/
+│   ├── admin/          # Admin panel
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Homepage
+│   └── globals.css     # Global styles
+├── components/
+│   ├── Hero3D.tsx      # 3D hero section
+│   ├── Services.tsx    # Services section
+│   ├── Portfolio.tsx   # Portfolio gallery
+│   ├── Contact.tsx     # Contact form
+│   └── Footer.tsx      # Footer
+└── public/             # Static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Vercel (Recommended)
 
-## Deploy on Vercel
+1. Push code ke GitHub
+2. Import project di Vercel
+3. Deploy otomatis!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Deploy
+vercel
+```
+
+### Manual Build
+
+```bash
+npm run build
+npm start
+```
+
+## 🔧 Customization
+
+### Update Konten
+1. Buka `/admin`
+2. Edit konten di tab yang tersedia
+3. Klik "Simpan"
+4. Refresh homepage untuk lihat perubahan
+
+### Update Warna Brand
+Edit di `app/globals.css`:
+```css
+:root {
+  --orange: #ff6b00;
+  --orange-light: #ff8533;
+}
+```
+
+### Update 3D Model
+Edit `components/Hero3D.tsx` untuk customize 3D printer model.
+
+## 📝 TODO
+
+- [ ] Integrate dengan CMS backend (Sanity/Strapi)
+- [ ] Upload image functionality
+- [ ] Add more portfolio items
+- [ ] SEO optimization
+- [ ] Analytics integration
+- [ ] Contact form backend
+
+## 🎨 Brand Colors
+
+- **Primary Orange:** `#ff6b00`
+- **Light Orange:** `#ff8533`
+- **Black:** `#000000`
+- **Dark Gray:** `#1a1a1a`
+- **White:** `#ffffff`
+
+## 📞 Support
+
+Untuk pertanyaan atau bantuan, hubungi:
+- WhatsApp: +62 812-3456-7890 (placeholder)
+- Email: info@jogpro.com
+
+---
+
+Built with ❤️ by Hermes AI
