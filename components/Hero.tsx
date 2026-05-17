@@ -10,134 +10,69 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
-      style={{
-        minHeight: '100vh',
-        background: 'linear-gradient(160deg, #FAF8F5 0%, #F2EDE6 55%, #FAE8EC 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        paddingTop: 80,
-      }}
-    >
-      <div style={{ maxWidth: 1080, margin: '0 auto', padding: '60px 24px', width: '100%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 64, alignItems: 'center' }}
-          className="hero-grid"
-        >
+    <section className="hero-section">
+      <div className="hero-container">
+        <div className="hero-grid">
 
           {/* LEFT — Copy */}
-          <div ref={ref} className="fade-up">
+          <div ref={ref} className="fade-up hero-copy">
             {/* Eyebrow */}
-            <div className="sans" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '5px 14px', borderRadius: 99,
-              background: '#F2C4CE', color: '#7A3D46',
-              fontSize: 11, fontWeight: 600, letterSpacing: '0.08em',
-              textTransform: 'uppercase', marginBottom: 28,
-            }}>
+            <div className="sans hero-eyebrow">
               🕯 Hadiah Paling Bermakna
             </div>
 
             {/* Headline */}
-            <h1 style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
-              fontWeight: 700,
-              lineHeight: 1.12,
-              letterSpacing: '-0.02em',
-              color: '#2C2523',
-              marginBottom: 24,
-            }}>
+            <h1 className="hero-headline">
               Mereka selalu<br />
-              <span style={{ color: '#BFD7ED', WebkitTextStroke: '1.5px #5A8DBD' }}>
-                ada dalam
-              </span>{' '}
+              <span className="hero-headline-accent">ada dalam</span>{' '}
               cahayamu
             </h1>
 
             {/* Sub */}
-            <p className="sans" style={{
-              fontSize: 17, lineHeight: 1.7,
-              color: '#5A524E', maxWidth: 420,
-              marginBottom: 40,
-            }}>
+            <p className="sans hero-sub">
               Ubah foto orang tersayangmu menjadi lampu tidur yang bercahaya hangat.
               Setiap malam, wajah mereka menyambutmu dalam cahaya yang tenang.
             </p>
 
             {/* CTAs */}
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <div className="hero-ctas">
               <a
-                href="https://wa.me/6289725239680?text=Halo,%20saya%20ingin%20memesan%20lampu%20kenangan%20litophane"
+                href="https://wa.me/628972523968?text=Halo,%20saya%20ingin%20memesan%20lampu%20kenangan%20litophane"
                 target="_blank" rel="noopener noreferrer"
-                className="sans"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  padding: '14px 28px', borderRadius: 99,
-                  background: '#2C2523', color: '#FAF8F5',
-                  fontWeight: 600, fontSize: 15,
-                  textDecoration: 'none', letterSpacing: '0.01em',
-                  boxShadow: '0 4px 20px rgba(44,37,35,0.2)',
-                  transition: 'transform 0.2s, box-shadow 0.2s',
-                }}
+                className="sans btn-primary"
                 onMouseEnter={e => (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)'}
                 onMouseLeave={e => (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'}
               >
                 <WaIcon /> Pesan Lewat WhatsApp
               </a>
 
-              <a
-                href="#galeri"
-                className="sans"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 6,
-                  padding: '14px 24px', borderRadius: 99,
-                  border: '1.5px solid rgba(44,37,35,0.2)',
-                  color: '#5A524E', fontSize: 15, fontWeight: 500,
-                  textDecoration: 'none',
-                  transition: 'border-color 0.2s',
-                }}
-              >
+              <a href="#galeri" className="sans btn-secondary">
                 Lihat Portfolio ↓
               </a>
             </div>
 
             {/* Trust strip */}
-            <div className="sans" style={{
-              display: 'flex', gap: 24, marginTop: 48,
-              flexWrap: 'wrap',
-            }}>
+            <div className="sans hero-trust">
               {['⚡ Proses 3–5 hari', '📦 Kirim se-Indonesia', '🎁 Bisa beri hadiah'].map(t => (
-                <span key={t} style={{ fontSize: 13, color: '#9E958F' }}>{t}</span>
+                <span key={t} className="hero-trust-item">{t}</span>
               ))}
             </div>
           </div>
 
           {/* RIGHT — Featured photo */}
-          <div style={{ position: 'relative' }} className="fade-up visible" >
+          <div className="hero-image-wrap fade-up visible">
             {/* Main card */}
-            <div style={{
-              position: 'relative',
-              borderRadius: 24,
-              overflow: 'hidden',
-              aspectRatio: '3/4',
-              boxShadow: '0 20px 60px rgba(44,37,35,0.15), 0 4px 16px rgba(44,37,35,0.08)',
-            }}>
+            <div className="hero-image-card">
               <Image
                 src="/portfolio/p7.jpg"
                 alt="Lampu litophane kenangan pernikahan"
                 fill
                 className="object-cover"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 90vw, 50vw"
               />
               {/* caption badge */}
-              <div style={{
-                position: 'absolute', bottom: 20, left: 20, right: 20,
-                background: 'rgba(250,248,245,0.92)',
-                backdropFilter: 'blur(12px)',
-                borderRadius: 14,
-                padding: '12px 16px',
-              }}>
+              <div className="hero-image-caption">
                 <p style={{ fontFamily: 'Georgia, serif', fontSize: 14, color: '#2C2523', marginBottom: 2 }}>
                   Hari paling indah — diabadikan selamanya
                 </p>
@@ -148,15 +83,7 @@ export default function Hero() {
             </div>
 
             {/* Floating mini card */}
-            <div style={{
-              position: 'absolute',
-              top: -20, right: -20,
-              background: '#FAF8F5',
-              borderRadius: 16,
-              padding: 16,
-              boxShadow: '0 8px 30px rgba(44,37,35,0.12)',
-              width: 140,
-            }}>
+            <div className="hero-badge">
               <div style={{ fontSize: 24, marginBottom: 6 }}>💛</div>
               <p className="sans" style={{ fontSize: 12, fontWeight: 600, color: '#2C2523', marginBottom: 2 }}>
                 100+ Kenangan
@@ -165,23 +92,266 @@ export default function Hero() {
             </div>
 
             {/* Decorative soft circle */}
-            <div style={{
-              position: 'absolute',
-              bottom: -40, left: -40,
-              width: 200, height: 200,
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #F2C4CE 0%, #BFD7ED 100%)',
-              opacity: 0.3,
-              zIndex: -1,
-            }} />
+            <div className="hero-deco-circle" />
           </div>
 
         </div>
       </div>
 
       <style>{`
+        /* ── Section ── */
+        .hero-section {
+          min-height: 100vh;
+          background: linear-gradient(160deg, #FAF8F5 0%, #F2EDE6 55%, #FAE8EC 100%);
+          display: flex;
+          align-items: center;
+          padding-top: 80px;
+        }
+
+        .hero-container {
+          max-width: 1080px;
+          margin: 0 auto;
+          padding: 60px 24px;
+          width: 100%;
+        }
+
+        /* ── Grid: 2-col desktop, 1-col mobile ── */
+        .hero-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          gap: 64px;
+          align-items: center;
+        }
+
+        /* ── Copy ── */
+        .hero-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 5px 14px;
+          border-radius: 99px;
+          background: #F2C4CE;
+          color: #7A3D46;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          margin-bottom: 24px;
+        }
+
+        .hero-headline {
+          font-family: Georgia, serif;
+          font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+          font-weight: 700;
+          line-height: 1.12;
+          letter-spacing: -0.02em;
+          color: #2C2523;
+          margin-bottom: 20px;
+        }
+
+        .hero-headline-accent {
+          color: #BFD7ED;
+          -webkit-text-stroke: 1.5px #5A8DBD;
+        }
+
+        .hero-sub {
+          font-size: 16px;
+          line-height: 1.7;
+          color: #5A524E;
+          max-width: 420px;
+          margin-bottom: 36px;
+        }
+
+        /* ── CTAs ── */
+        .hero-ctas {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+          margin-bottom: 0;
+        }
+
+        .btn-primary {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 14px 28px;
+          border-radius: 99px;
+          background: #2C2523;
+          color: #FAF8F5;
+          font-weight: 600;
+          font-size: 15px;
+          text-decoration: none;
+          letter-spacing: 0.01em;
+          box-shadow: 0 4px 20px rgba(44,37,35,0.2);
+          transition: transform 0.2s, box-shadow 0.2s;
+          white-space: nowrap;
+        }
+
+        .btn-secondary {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 14px 24px;
+          border-radius: 99px;
+          border: 1.5px solid rgba(44,37,35,0.2);
+          color: #5A524E;
+          font-size: 15px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: border-color 0.2s;
+          white-space: nowrap;
+        }
+
+        /* ── Trust strip ── */
+        .hero-trust {
+          display: flex;
+          gap: 20px;
+          margin-top: 40px;
+          flex-wrap: wrap;
+        }
+
+        .hero-trust-item {
+          font-size: 13px;
+          color: #9E958F;
+        }
+
+        /* ── Image side ── */
+        .hero-image-wrap {
+          position: relative;
+        }
+
+        .hero-image-card {
+          position: relative;
+          border-radius: 24px;
+          overflow: hidden;
+          aspect-ratio: 3/4;
+          box-shadow: 0 20px 60px rgba(44,37,35,0.15), 0 4px 16px rgba(44,37,35,0.08);
+        }
+
+        .hero-image-caption {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          right: 20px;
+          background: rgba(250,248,245,0.92);
+          backdrop-filter: blur(12px);
+          border-radius: 14px;
+          padding: 12px 16px;
+        }
+
+        .hero-badge {
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          background: #FAF8F5;
+          border-radius: 16px;
+          padding: 16px;
+          box-shadow: 0 8px 30px rgba(44,37,35,0.12);
+          width: 140px;
+        }
+
+        .hero-deco-circle {
+          position: absolute;
+          bottom: -40px;
+          left: -40px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #F2C4CE 0%, #BFD7ED 100%);
+          opacity: 0.3;
+          z-index: -1;
+        }
+
+        /* ── MOBILE ── */
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .hero-section {
+            padding-top: 70px;
+            align-items: flex-start;
+          }
+
+          .hero-container {
+            padding: 40px 20px 60px;
+          }
+
+          .hero-grid {
+            grid-template-columns: 1fr;
+            gap: 0;
+          }
+
+          /* Gambar dulu di mobile */
+          .hero-image-wrap {
+            order: -1;
+            margin-bottom: 36px;
+          }
+
+          .hero-image-card {
+            aspect-ratio: 4/3;
+            border-radius: 18px;
+          }
+
+          /* Badge jangan keluar layar */
+          .hero-badge {
+            top: -14px;
+            right: -10px;
+            width: 120px;
+            padding: 12px;
+          }
+
+          .hero-deco-circle {
+            width: 140px;
+            height: 140px;
+            bottom: -24px;
+            left: -20px;
+          }
+
+          .hero-eyebrow {
+            font-size: 10px;
+            margin-bottom: 16px;
+          }
+
+          .hero-headline {
+            font-size: clamp(1.8rem, 7vw, 2.4rem);
+            margin-bottom: 16px;
+          }
+
+          .hero-sub {
+            font-size: 15px;
+            margin-bottom: 28px;
+            max-width: 100%;
+          }
+
+          .hero-ctas {
+            flex-direction: column;
+          }
+
+          .btn-primary, .btn-secondary {
+            width: 100%;
+            justify-content: center;
+            font-size: 15px;
+            padding: 15px 24px;
+          }
+
+          .hero-trust {
+            margin-top: 28px;
+            gap: 12px;
+          }
+
+          .hero-trust-item {
+            font-size: 12px;
+          }
+        }
+
+        /* ── SMALL MOBILE (≤ 380px) ── */
+        @media (max-width: 380px) {
+          .hero-container {
+            padding: 32px 16px 48px;
+          }
+
+          .hero-badge {
+            width: 100px;
+            padding: 10px;
+            right: -6px;
+          }
         }
       `}</style>
     </section>
