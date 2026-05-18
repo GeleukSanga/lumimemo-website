@@ -3,9 +3,23 @@ import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   useEffect(() => {
     const timer = setTimeout(() => ref.current?.classList.add('visible'), 100);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.play().catch(() => {
+      // fallback: play on first user interaction
+      const handler = () => { video.play(); document.removeEventListener('touchstart', handler); document.removeEventListener('click', handler); };
+      document.addEventListener('touchstart', handler, { once: true });
+      document.addEventListener('click', handler, { once: true });
+    });
   }, []);
 
   return (
@@ -63,6 +77,7 @@ export default function Hero() {
             {/* Main card */}
             <div className="hero-image-card">
               <video
+                ref={videoRef}
                 autoPlay
                 loop
                 muted
