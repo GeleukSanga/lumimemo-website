@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -59,25 +58,27 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT — Featured photo */}
+          {/* RIGHT — Featured video */}
           <div className="hero-image-wrap fade-up visible">
             {/* Main card */}
             <div className="hero-image-card">
-              <Image
-                src="/portfolio/p7.jpg"
-                alt="Lampu litophane kenangan pernikahan"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 90vw, 50vw"
-              />
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="hero-video"
+              >
+                <source src="/litophane-hero.webm" type="video/webm" />
+                <source src="/litophane-hero.mp4" type="video/mp4" />
+              </video>
               {/* caption badge */}
               <div className="hero-image-caption">
                 <p style={{ fontFamily: 'Georgia, serif', fontSize: 14, color: '#2C2523', marginBottom: 2 }}>
-                  Hari paling indah — diabadikan selamanya
+                  Lihat produk aslinya — bercahaya hangat
                 </p>
                 <p className="sans" style={{ fontSize: 11, color: '#9E958F', letterSpacing: '0.04em' }}>
-                  Litophane Custom · Pernikahan Adat Jawa
+                  Litophane Custom · Lampu Kenangan
                 </p>
               </div>
             </div>
@@ -226,6 +227,13 @@ export default function Hero() {
           overflow: hidden;
           aspect-ratio: 3/4;
           box-shadow: 0 20px 60px rgba(44,37,35,0.15), 0 4px 16px rgba(44,37,35,0.08);
+        }
+
+        .hero-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
 
         .hero-image-caption {
