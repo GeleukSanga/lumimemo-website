@@ -10,6 +10,7 @@ const items = [
   { src: '/portfolio/p5.jpg', caption: 'Firman yang menerangi', sub: 'Religi', tag: 'Religi' },
   { src: '/portfolio/p6.jpg', caption: 'Bunda Maria', sub: 'Religi', tag: 'Religi' },
   { src: '/portfolio/p7.jpg', caption: 'Hari pernikahan', sub: 'Pernikahan', tag: 'Pernikahan' },
+  { src: '/portfolio/p8.jpg', caption: 'Si kecil dalam cahaya hangat', sub: 'Keluarga', tag: 'Keluarga' },
 ];
 
 const tagColors: Record<string, { bg: string; color: string }> = {
