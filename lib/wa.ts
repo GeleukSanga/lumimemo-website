@@ -32,27 +32,10 @@ export function parseUtmFromLocation(search: string, landingPath: string): UtmCo
   };
 }
 
-export function buildTrackedWaText(baseText: string, utm?: UtmContext) {
-  if (!utm) return baseText;
-
-  const fields: Array<[string, string | undefined]> = [
-    ['Landing', utm.landingPath],
-    ['utm_source', utm.utm_source],
-    ['utm_medium', utm.utm_medium],
-    ['utm_campaign', utm.utm_campaign],
-    ['utm_content', utm.utm_content],
-    ['utm_term', utm.utm_term],
-  ];
-
-  const trackingLines = fields
-    .filter(([, value]) => Boolean(value))
-    .map(([label, value]) => `${label}: ${value}`);
-
-  if (trackingLines.length === 0) {
-    return `${baseText}\n\nRef: ${utm.landingPath ?? 'direct'}`;
-  }
-
-  return `${baseText}\n\n--- Tracking Ads ---\n${trackingLines.join('\n')}`;
+export function buildTrackedWaText(baseText: string, _utm?: UtmContext) {
+  // Tracking dilakukan via UTM params di URL, bukan di isi pesan customer.
+  // Pesan tetap bersih dan profesional.
+  return baseText;
 }
 
 export function trackedWaLink(baseText: string, utm?: UtmContext) {
