@@ -1,5 +1,6 @@
 'use client';
 import { trackedWaLink, UtmContext } from '@/lib/wa';
+import Countdown from '@/components/Countdown';
 
 type CTASectionProps = {
   title: string;
@@ -45,7 +46,7 @@ export default function CTASection({ title, subtext, waText, utmContext }: CTASe
 
         <div style={{
           display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap',
-          marginBottom: 44,
+          marginBottom: 32,
         }}>
           <span className="sans" style={{
             background: 'rgba(44,37,35,0.08)', borderRadius: 99,
@@ -60,6 +61,9 @@ export default function CTASection({ title, subtext, waText, utmContext }: CTASe
             💯 Garansi uang kembali
           </span>
         </div>
+
+        {/* Countdown Timer */}
+        <Countdown variant="cta" />
 
         <a
           href={trackedWaLink(waText, utmContext)}

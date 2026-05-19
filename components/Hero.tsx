@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { LandingVariant } from '@/lib/landingVariants';
 import { trackedWaLink, UtmContext } from '@/lib/wa';
+import Countdown from '@/components/Countdown';
 
 type HeroProps = {
   variant: LandingVariant;
@@ -40,6 +41,11 @@ export default function Hero({ variant, utmContext }: HeroProps) {
           {variant.offerItems.map((item) => (
             <span key={item} className="offer-chip sans">{item}</span>
           ))}
+        </div>
+
+        {/* Countdown Timer */}
+        <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+          <Countdown variant="hero" />
         </div>
 
         <div className="hero-grid">
