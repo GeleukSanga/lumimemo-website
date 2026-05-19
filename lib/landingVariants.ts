@@ -28,14 +28,14 @@ const baseOffers = [
 export const landingVariants: Record<string, LandingVariant> = {
   home: {
     slug: '/',
-    eyebrow: '🕯 Hadiah Paling Bermakna',
+    eyebrow: '💛 100+ Kenangan Sudah Diwujudkan',
     headlineTop: 'Mereka selalu',
     headlineAccent: 'ada dalam',
     headlineBottom: 'cahayamu',
     subtext:
       'Ubah foto orang tersayangmu menjadi lampu tidur yang bercahaya hangat. Setiap malam, wajah mereka menyambutmu dalam cahaya yang tenang.',
     primaryWaText: 'Halo, saya ingin memesan lampu kenangan litophane',
-    ctaTitle: 'Siapa yang ingin kamu kenang?',
+    ctaTitle: 'Siapa yang selalu ingin kamu ingat?',
     ctaSubtext:
       'Jangan biarkan foto berharga hanya tersimpan di galeri ponsel. Wujudkan mereka dalam cahaya yang selalu menyala.',
     offerItems: baseOffers,

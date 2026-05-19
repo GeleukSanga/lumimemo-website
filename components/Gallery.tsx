@@ -81,19 +81,19 @@ export default function Gallery() {
             fontWeight: 700, lineHeight: 1.15,
             letterSpacing: '-0.02em', color: '#2C2523', marginBottom: 16,
           }}>
-            Setiap foto,{' '}
+            Foto kamu —{' '}
             <span style={{
               background: 'linear-gradient(90deg, #BFD7ED, #F2C4CE)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-              sebuah kenangan
+              begini wujudnya
             </span>
           </h2>
           <p className="sans" style={{
             color: '#9E958F', maxWidth: 440, margin: '0 auto', lineHeight: 1.65, fontSize: 15,
           }}>
-            Bukan sekadar lampu — ini cara kamu mengatakan bahwa mereka selalu ada di hatimu.
+            Foto kamu, kami ubah jadi cahaya — hangat, personal, dan tak terlupakan.
           </p>
         </div>
 

@@ -91,7 +91,7 @@ export default function Hero({ variant, utmContext }: HeroProps) {
             </div>
 
             <div className="sans hero-trust">
-              {['✅ Konsultasi gratis', '⚡ Respon cepat', '🛡️ Aman untuk pemula'].map(t => (
+              {['✅ Konsultasi gratis', '⚡ Respon cepat', '🙌 Gampang pesan, kami bantu dari awal'].map(t => (
                 <span key={t} className="hero-trust-item">{t}</span>
               ))}
             </div>
