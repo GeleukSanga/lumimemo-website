@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     description: "Ubah foto orang tersayang jadi lampu tidur custom. Mulai Rp99.000, kirim se-Indonesia.",
     images: ["https://www.jogpro.net/og-image.jpg"],
   },
+  alternates: {
+    canonical: "https://www.jogpro.net",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

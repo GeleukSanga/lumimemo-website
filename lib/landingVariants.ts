@@ -19,10 +19,11 @@ export type LandingVariant = {
 };
 
 const baseOffers = [
+  '🎁 Gratis ongkir pemesanan hari ini!',
   '💰 Mulai Rp99.000',
   '⚡ Proses 3–5 hari',
   '🛠️ Revisi desain 1x',
-  '📦 Kirim se-Indonesia',
+  '💯 Garansi uang kembali jika tidak puas',
 ];
 
 export const landingVariants: Record<string, LandingVariant> = {
@@ -33,7 +34,7 @@ export const landingVariants: Record<string, LandingVariant> = {
     headlineAccent: 'ada dalam',
     headlineBottom: 'cahayamu',
     subtext:
-      'Ubah foto orang tersayangmu menjadi lampu tidur yang bercahaya hangat. Setiap malam, wajah mereka menyambutmu dalam cahaya yang tenang.',
+      'Ubah foto kenangan menjadi lampu dekoratif yang hangat dan indah. Setiap malam, mereka bersinar di rumahmu.',
     primaryWaText: 'Halo, saya ingin memesan lampu kenangan litophane',
     ctaTitle: 'Siapa yang selalu ingin kamu ingat?',
     ctaSubtext:

@@ -38,10 +38,28 @@ export default function CTASection({ title, subtext, waText, utmContext }: CTASe
 
         <p className="sans" style={{
           fontSize: 13, color: 'rgba(44,37,35,0.5)',
-          fontStyle: 'italic', marginBottom: 44,
+          fontStyle: 'italic', marginBottom: 16,
         }}>
-          Konsultasi gratis · Tanpa komitmen · Respon cepat
+          Konsultasi gratis · Tanpa biaya komitmen · Respon cepat
         </p>
+
+        <div style={{
+          display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap',
+          marginBottom: 44,
+        }}>
+          <span className="sans" style={{
+            background: 'rgba(44,37,35,0.08)', borderRadius: 99,
+            padding: '7px 16px', fontSize: 13, color: '#2C2523', fontWeight: 600,
+          }}>
+            🎁 Gratis ongkir hari ini
+          </span>
+          <span className="sans" style={{
+            background: 'rgba(44,37,35,0.08)', borderRadius: 99,
+            padding: '7px 16px', fontSize: 13, color: '#2C2523', fontWeight: 600,
+          }}>
+            💯 Garansi uang kembali
+          </span>
+        </div>
 
         <a
           href={trackedWaLink(waText, utmContext)}
