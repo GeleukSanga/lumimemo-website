@@ -30,6 +30,29 @@ export default function LandingPage({ variantKey }: LandingPageProps) {
     setUtmContext(parseUtmFromLocation(window.location.search, variant.slug));
   }, [variant.slug]);
 
+  // Meta Pixel: Track WhatsApp clicks
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleWaClick = (e: Event) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (target && target.getAttribute('href')?.includes('wa.me')) {
+        const fbq = (window as any).fbq;
+        if (fbq) {
+          fbq('track', 'Contact');
+          fbq('trackCustom', 'WhatsAppClick', {
+            page: window.location.pathname,
+            text: target.innerText.trim(),
+            timestamp: new Date().toISOString(),
+          });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleWaClick);
+    return () => document.removeEventListener('click', handleWaClick);
+  }, []);
+
   return (
     <main>
       <Navbar />
