@@ -31,7 +31,7 @@ export default function LandingPage({ variantKey }: LandingPageProps) {
     setUtmContext(parseUtmFromLocation(window.location.search, variant.slug));
   }, [variant.slug]);
 
-  // Meta Pixel: Track WhatsApp clicks
+  // Meta Pixel & TikTok Pixel: Track WhatsApp clicks
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -49,12 +49,16 @@ export default function LandingPage({ variantKey }: LandingPageProps) {
           });
         }
 
-        // TikTok Pixel tracking
+        // TikTok Pixel tracking (with ready check)
         const ttq = (window as any).ttq;
-        if (ttq) {
-          ttq.track('Contact', {
-            content_name: target.innerText.trim(),
-            page: window.location.pathname,
+        if (ttq && ttq.ready) {
+          ttq.ready(() => {
+            ttq.track('Contact', {
+              content_name: target.innerText.trim(),
+              content_type: 'product',
+              value: 99000,
+              currency: 'IDR',
+            });
           });
         }
       }
