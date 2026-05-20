@@ -12,6 +12,7 @@ const Hero = dynamic(() => import('@/components/Hero'), { ssr: false });
 const Problem = dynamic(() => import('@/components/Problem'));
 const Gallery = dynamic(() => import('@/components/Gallery'));
 const Emotional = dynamic(() => import('@/components/Emotional'));
+const RealView = dynamic(() => import('@/components/RealView'));
 const FAQ = dynamic(() => import('@/components/FAQ'));
 const CTASection = dynamic(() => import('@/components/CTASection'));
 
@@ -60,6 +61,7 @@ export default function LandingPage({ variantKey }: LandingPageProps) {
       <Problem />
       <Gallery />
       <Emotional />
+      <RealView />
       <FAQ />
       <CTASection
         title={variant.ctaTitle}
