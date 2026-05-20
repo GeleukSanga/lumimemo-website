@@ -31,6 +31,20 @@ export default function LandingPage({ variantKey }: LandingPageProps) {
     setUtmContext(parseUtmFromLocation(window.location.search, variant.slug));
   }, [variant.slug]);
 
+  // TikTok Pixel: Track PageView as ViewContent (Standard Event)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const ttq = (window as any).ttq;
+    if (ttq) {
+      ttq.track('ViewContent', {
+        content_name: 'LumiMemo Landing Page',
+        content_type: 'product',
+        value: 99000,
+        currency: 'IDR',
+      });
+    }
+  }, []);
+
   // Meta Pixel & TikTok Pixel: Track WhatsApp clicks
   useEffect(() => {
     if (typeof window === 'undefined') return;
