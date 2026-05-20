@@ -9,8 +9,10 @@ import { parseUtmFromLocation, UtmContext } from '@/lib/wa';
 
 const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
 const Hero = dynamic(() => import('@/components/Hero'), { ssr: false });
+const Problem = dynamic(() => import('@/components/Problem'));
 const Gallery = dynamic(() => import('@/components/Gallery'));
 const Emotional = dynamic(() => import('@/components/Emotional'));
+const FAQ = dynamic(() => import('@/components/FAQ'));
 const CTASection = dynamic(() => import('@/components/CTASection'));
 
 type VariantKey = keyof typeof landingVariants;
@@ -32,8 +34,10 @@ export default function LandingPage({ variantKey }: LandingPageProps) {
     <main>
       <Navbar />
       <Hero variant={variant} utmContext={utmContext} />
+      <Problem />
       <Gallery />
       <Emotional />
+      <FAQ />
       <CTASection
         title={variant.ctaTitle}
         subtext={variant.ctaSubtext}
