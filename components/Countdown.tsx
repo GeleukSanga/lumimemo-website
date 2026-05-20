@@ -42,7 +42,7 @@ export default function Countdown({ variant = 'hero' }: CountdownProps) {
   const isHero = variant === 'hero';
   const bg = isHero ? 'rgba(255,255,255,0.85)' : 'rgba(44,37,35,0.08)';
   const borderColor = isHero ? 'rgba(44,37,35,0.12)' : 'rgba(44,37,35,0.15)';
-  const textColor = '#2C2523';
+  const textColor = isHero ? '#2C2523' : '#FFFFFF'; // White untuk CTA (dark bg), dark brown untuk Hero
   const accentColor = '#D97B6C';
 
   const units = [
