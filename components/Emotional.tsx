@@ -331,12 +331,12 @@ export default function Emotional() {
                     fontFamily: 'Georgia, serif', fontSize: 15,
                     fontWeight: 700, color: '#2C2523', marginBottom: 8,
                   }}>
-                    {s.t || s.title}
+                    {s.title}
                   </p>
 
                   {/* Desc */}
                   <p className="sans" style={{ fontSize: 13, color: '#9E958F', lineHeight: 1.6 }}>
-                    {s.d || s.desc}
+                    {s.desc}
                   </p>
 
                   {/* Mini visual */}
